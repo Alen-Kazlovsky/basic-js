@@ -3,15 +3,15 @@
     return domain.split('.').reverse();
   })
 
-  let result = {};
+  let stats = {};
 
   for (let domain of newArr) {
-    let dnss = '';
+    let currentDNS = '';
     for (let dns of domain) {
-      dnss += `.${dns}`;
-      result[dnss] = result[dnss] ? ++result[dnss] : 1;
+      currentDNS += `.${dns}`;
+      stats[currentDNS] = stats[currentDNS] ? ++stats[currentDNS] : 1;
     }
   }
 
-  return result;
+  return stats;
 }
